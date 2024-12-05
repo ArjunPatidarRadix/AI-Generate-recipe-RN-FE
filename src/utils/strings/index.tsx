@@ -1,0 +1,43 @@
+// text used in app
+export const english = {
+  common: {
+    appName: 'AIRecipeGenerator',
+    alertDontAllow: "Don't Allow",
+    alertOpenSettings: 'Go To Settings',
+    defaultAlertAllowButtonText: 'Allow',
+    defaultAlertCancelButtonText: 'Cancel',
+    pleaseAllowCameraPermissionHeader: 'Camera Permissions Needed',
+    pleaseAllowCameraPermission:
+      'Please allow access to your camera so you can upload your profile picture and add pictures to your rating',
+    cameraNotFound:
+      'You are unable to use this feature because your phone does not have a camera',
+    cameraNotFoundTitle: 'Camera Needed',
+    pleaseAllowStoragePermissionHeader: 'Library Permissions Needed',
+    pleaseAllowStoragePermission:
+      'Please allow access to your photo library so you can upload your profile picture and add pictures to your rating',
+    reconnectButton: 'RECONNECT',
+    readMore: 'Read More',
+    readLess: 'Read Less',
+    alertWindowPositiveButtonText: 'OKAY',
+    alertWindowNegativeButtonText: 'CANCEL',
+    noResultFound: 'No results found',
+    noInternetTitle: 'No network connection',
+    internalServerError: 'Network server error',
+    networkError: 'Network Error',
+    tryAgain: 'Try Again',
+    pleaseTry: 'Network Error: Please Try Again',
+    reloadButton: 'Reload',
+    dismissButton: 'Dismiss',
+    mandatoryUpdateTitle: "It's Time to Update!",
+    mandatoryUpdateButton: 'Update',
+    shouldUpdateLeftButton: 'Later',
+    shouldUpdateRightButton: 'Update',
+    alertWindowProceedButtonText: 'PROCEED',
+    advertiserTrackingPermissionButtonAllow: 'Allow',
+    dummyString: 'dummy',
+    eight: '2',
+    alertWindowYesButtonText: 'YES',
+    somethingWentWrongPleaseTryAgain: 'Something went wrong, please try again',
+    remove: 'Remove',
+  },
+};

@@ -1,0 +1,21 @@
+// colors used in the app
+export const colors = {
+  primaryAppColor: '#17c6ed',
+  primaryAppColorFaded: '#17c6ed50',
+  primaryAppColorDark: '#19a7c7',
+  secondaryAppColor: '#17c6ed',
+  secondaryAppColorFaded: '#FA540050',
+  defaultBackgroundColor: '#f6f8f9',
+  whiteTextColor: '#FFF',
+  blackTextColor: '#193238',
+  transparent: 'transparent',
+  disabledColor: 'rgb(139,134,135)',
+  disabledDarkColor: '#99A1A8',
+  placeholderTextColor: 'grey',
+  borderOutlineColor: '#E9E6EA',
+  borderOutlineActiveColor: '#7E6C80',
+  secondaryCriticalRed: '#FF0000',
+  blackTransparent: 'rgba(0,0,0, 0.5)',
+  inActiveBottomTabColor: 'rgb(148, 131, 148)',
+  grayColor: '#C4C4C4',
+};

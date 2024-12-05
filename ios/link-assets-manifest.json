@@ -1,0 +1,109 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Doyle-Bold.ttf",
+      "sha1": "2c9b0843b611a09ceecd65edafdb8e06dcba366c"
+    },
+    {
+      "path": "assets/fonts/Doyle-Regular.ttf",
+      "sha1": "f48bbde9e620a276d194effa81590287d43872e4"
+    },
+    {
+      "path": "assets/fonts/DoyleBlack-Italic.ttf",
+      "sha1": "81d83f873f44bfa35ce1ee9f333c531bc176caf2"
+    },
+    {
+      "path": "assets/fonts/DoyleBlack-Regular.ttf",
+      "sha1": "ed9db5830e8f2f32097618d0c7e8801c50e2e105"
+    },
+    {
+      "path": "assets/fonts/DoyleLight-Regular.ttf",
+      "sha1": "78bc2edc2d250deca882c0167618d17f98ad6376"
+    },
+    {
+      "path": "assets/fonts/DoyleMedium-Regular.ttf",
+      "sha1": "70958a82e605792b97cc0a02b750c8fd2d988620"
+    },
+    {
+      "path": "assets/fonts/Gellix-Black.ttf",
+      "sha1": "de170ea97a6a514ae0110e477881004274dca05b"
+    },
+    {
+      "path": "assets/fonts/Gellix-BlackItalic.ttf",
+      "sha1": "20b3402a48b8106a526b458d75c2f66110b05416"
+    },
+    {
+      "path": "assets/fonts/Gellix-Bold.ttf",
+      "sha1": "d6f2eff2f4c2002382b2cc108ea72273d54e5b68"
+    },
+    {
+      "path": "assets/fonts/Gellix-BoldItalic.ttf",
+      "sha1": "8b2f276880e9cf9f18b39a44421a6105e0248883"
+    },
+    {
+      "path": "assets/fonts/Gellix-ExtraBold.ttf",
+      "sha1": "ef611cd78aea056b3b60b1bcba2c3b3ea81db334"
+    },
+    {
+      "path": "assets/fonts/Gellix-ExtraBoldItalic.ttf",
+      "sha1": "bc518c7c7d96072102ec246c17bb37b5ffb0b13c"
+    },
+    {
+      "path": "assets/fonts/Gellix-LightItalic.ttf",
+      "sha1": "8cebf86d159c8a07eeabb6106d2081386aae0b3e"
+    },
+    {
+      "path": "assets/fonts/Gellix-Medium.ttf",
+      "sha1": "3fb6c53f25814d797fe20f679536abb1a82edf51"
+    },
+    {
+      "path": "assets/fonts/Gellix-MediumItalic.ttf",
+      "sha1": "5425f911589594a708c6f63f6a9c537a5a1ea227"
+    },
+    {
+      "path": "assets/fonts/Gellix-Regular.ttf",
+      "sha1": "d11b873993be06513b9089d667ad1111859403d1"
+    },
+    {
+      "path": "assets/fonts/Gellix-RegularItalic.ttf",
+      "sha1": "38dd638012ec0bb9cc404522a05d7ce9d599c303"
+    },
+    {
+      "path": "assets/fonts/Gellix-SemiBold.ttf",
+      "sha1": "d948755c051aeef39702ce0d8f35d11d32b3fcfa"
+    },
+    {
+      "path": "assets/fonts/Gellix-SemiBoldItalic.ttf",
+      "sha1": "d3ebeef65216f84d27552ddecac1c62ddb7704a7"
+    },
+    {
+      "path": "assets/fonts/Gellix-Thin.ttf",
+      "sha1": "7f9cd74aaadae18474c37b6e9e44dde568064c3b"
+    },
+    {
+      "path": "assets/fonts/Gellix-ThinItalic.ttf",
+      "sha1": "e3c0eefa75a7bac18d4a9c33d235cc1839b6cc60"
+    },
+    {
+      "path": "assets/fonts/Poppins-Bold.ttf",
+      "sha1": "875cf0cecd647bcf22e79d633d868c1b1ec98dfa"
+    },
+    {
+      "path": "assets/fonts/Poppins-ExtraBold.ttf",
+      "sha1": "4b5c0750f073abd576413a0898d3b95adaf199c8"
+    },
+    {
+      "path": "assets/fonts/Poppins-Medium.ttf",
+      "sha1": "283f21b44efbdbf276ba802be2d949a36bbc4233"
+    },
+    {
+      "path": "assets/fonts/Poppins-Regular.ttf",
+      "sha1": "fdd3002e7d814ee47c1c1b8487c72c6bbb3a2d00"
+    },
+    {
+      "path": "assets/fonts/Poppins-SemiBold.ttf",
+      "sha1": "8a4ace9392d06bcb7f8ea2f5169b07e4c383a90d"
+    }
+  ]
+}

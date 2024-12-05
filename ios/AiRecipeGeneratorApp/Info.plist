@@ -26,14 +26,13 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -48,5 +47,34 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Doyle-Bold.ttf</string>
+		<string>Doyle-Regular.ttf</string>
+		<string>DoyleBlack-Italic.ttf</string>
+		<string>DoyleBlack-Regular.ttf</string>
+		<string>DoyleLight-Regular.ttf</string>
+		<string>DoyleMedium-Regular.ttf</string>
+		<string>Gellix-Black.ttf</string>
+		<string>Gellix-BlackItalic.ttf</string>
+		<string>Gellix-Bold.ttf</string>
+		<string>Gellix-BoldItalic.ttf</string>
+		<string>Gellix-ExtraBold.ttf</string>
+		<string>Gellix-ExtraBoldItalic.ttf</string>
+		<string>Gellix-LightItalic.ttf</string>
+		<string>Gellix-Medium.ttf</string>
+		<string>Gellix-MediumItalic.ttf</string>
+		<string>Gellix-Regular.ttf</string>
+		<string>Gellix-RegularItalic.ttf</string>
+		<string>Gellix-SemiBold.ttf</string>
+		<string>Gellix-SemiBoldItalic.ttf</string>
+		<string>Gellix-Thin.ttf</string>
+		<string>Gellix-ThinItalic.ttf</string>
+		<string>Poppins-Bold.ttf</string>
+		<string>Poppins-ExtraBold.ttf</string>
+		<string>Poppins-Medium.ttf</string>
+		<string>Poppins-Regular.ttf</string>
+		<string>Poppins-SemiBold.ttf</string>
+	</array>
 </dict>
 </plist>

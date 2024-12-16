@@ -12,6 +12,7 @@ import {checkInternet, clearCachedData} from '../../utils/shared';
 import {english} from '../../utils/strings';
 import NetInfo from '@react-native-community/netinfo';
 import {NETWORK_DISCONNECTED} from '../../utils/constant/AppConstants';
+import {hideLoader, showDialog, showLoader} from '../context/CustomContext';
 
 const url = (_url: string, appendInUrl?: string) =>
   `${BASE_URL}${_url}${appendInUrl || ''}`;
@@ -51,7 +52,7 @@ class Request {
    */
   public setNavigation(navigation: any) {
     this.navigation = navigation;
-    this.showLoader = false;
+    this.showLoader = true;
     this.showAlertDialog = true;
   }
   /**
@@ -150,11 +151,13 @@ class Request {
       data: body,
     });
 
-    this.navigation &&
-      this.showLoader &&
-      this.navigation.navigate(NAVIGATION_TO_LOADER_VIEW, {
-        ...(this.loaderColor && {color: this.loaderColor}),
-      });
+    // this.navigation &&
+    //   this.showLoader &&
+    //   this.navigation.navigate(NAVIGATION_TO_LOADER_VIEW, {
+    //     ...(this.loaderColor && {color: this.loaderColor}),
+    //   });
+
+    this.showLoader && showLoader();
 
     try {
       const response = await axios({
@@ -176,17 +179,20 @@ class Request {
       });
       Logger.describeSuccessResponse(response);
       // close loader
-      if (this?.navigation?.canGoBack()) {
-        this.navigation && this.showLoader && this.navigation.pop();
-      }
+      // if (this?.navigation?.canGoBack()) {
+      //   this.navigation && this.showLoader && this.navigation.pop();
+      // }
+
+      hideLoader();
 
       return response.data;
     } catch (error: any) {
       Logger.describeErrorResponse(error);
       // close loader
-      if (this?.navigation?.canGoBack()) {
-        this.showLoader && this.navigation.pop();
-      }
+      // if (this?.navigation?.canGoBack()) {
+      //   this.showLoader && this.navigation.pop();
+      // }
+      hideLoader();
       const {response} = error;
 
       // if api request not reached on server
@@ -245,18 +251,24 @@ class Request {
    * @param message
    */
   handleAPIError(title: string | null, message: string) {
-    this.navigation &&
-      this.navigation.navigate(NAVIGATION_TO_ALERT_DIALOG, {
-        title: title,
-        description: message,
-        hideNegativeButton: true,
-        dismissible: false,
-        buttonStyle: {
-          ...(this.alertButtonColor && {
-            backgroundColor: this.alertButtonColor,
-          }),
-        },
-      });
+    // this.navigation &&
+    //   this.navigation.navigate(NAVIGATION_TO_ALERT_DIALOG, {
+    //     title: title,
+    //     description: message,
+    //     hideNegativeButton: true,
+    //     dismissible: false,
+    //     buttonStyle: {
+    //       ...(this.alertButtonColor && {
+    //         backgroundColor: this.alertButtonColor,
+    //       }),
+    //     },
+    //   });
+
+    showDialog({
+      title: title || '',
+      message: message,
+      buttons: [{text: 'Okay'}],
+    });
   }
 
   /**

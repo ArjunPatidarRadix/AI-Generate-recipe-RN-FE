@@ -14,6 +14,7 @@ import Text from '../../components/Text/Text';
 import {NAVIGATION_TO_ALERT_DIALOG} from '../../utils/constant/ScreenConstants';
 import Avatar from '../../components/Avatar/Avatar';
 import {colors} from '../../theme/colors';
+import {showDialog} from '../../services/context/CustomContext';
 
 type RecipeData = {
   recipeName: string;
@@ -21,7 +22,7 @@ type RecipeData = {
 };
 
 type TImage = {
-  fileName: string;
+  filename: string;
   height: number;
   mime: string;
   modificationDate: string;
@@ -58,6 +59,18 @@ const RecipeGenerateScreen = ({navigation}: any) => {
     }
     logMe(image, ' IMAGE CROP PICKER RESPONSE');
   };
+
+  // const handleShowDialog = () => {
+  //   showDialog({
+  //     title: 'Confirmation',
+  //     message: 'Are you sure you want to proceed?',
+  //     buttons: [
+  //       {text: 'Cancel', onPress: () => console.log('Cancelled')},
+  //       {text: 'Confirm', onPress: () => console.log('Confirmed')},
+  //       {text: 'Confirm', onPress: () => console.log('Confirmed')},
+  //     ],
+  //   });
+  // };
 
   const openCameraPicker = () => {
     ImagePicker.openCamera({
@@ -114,35 +127,16 @@ const RecipeGenerateScreen = ({navigation}: any) => {
 
   const callGenerateRecipeApi = async (image: TImage) => {
     // const url = URL.createObjectURL(blob);
-
     const formData = new FormData();
 
     var img = {
       uri: image.path,
-      name: new Date(Date.now()) + '-food.jpeg',
+      name: image.filename,
       type: image.mime,
-      size: image.size,
     };
-
-    const response = await fetch(image.path);
-    const blob = await response.blob();
-
-    console.log('blob:: ', blob);
-    formData.append('image', {
-      uri: img.uri.replace('file://', ''),
-      type: img.type,
-      // name: img.name,
-      size: img.size,
-    });
-    // formData.append("image", image, new Date(Date.now()) + "-food.jpeg"); // "audioFile" is the form field name
-
-    // formData.append('image', blob);
-    // formData.append('mimeType', image.mime);
-    // formData.append('originalname', new Date(Date.now()) + '-food.jpeg');
-
+    formData.append('image', img);
     formData.append('size', image.size.toString());
 
-    console.log('formData: ', formData);
     try {
       setLoading(true);
       console.log('formData: ', formData);
@@ -154,8 +148,17 @@ const RecipeGenerateScreen = ({navigation}: any) => {
       if (response.data) {
         setRecipeData(response.data);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log('error', error);
+      const msg = error?.response?.data?.message
+        ? error.response.data.message
+        : error.message;
+
+      showDialog({
+        title: 'Error',
+        message: msg,
+        buttons: [{text: 'Okay'}],
+      });
     } finally {
       setLoading(false);
     }

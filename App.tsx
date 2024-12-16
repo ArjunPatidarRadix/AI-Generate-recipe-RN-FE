@@ -16,6 +16,8 @@ import {store} from './src/services/redux';
 import {RootStackNavigator} from './src/navigation/navigations';
 import {Provider as PaperProvider, DefaultTheme} from 'react-native-paper';
 import {useColorScheme} from 'react-native';
+import {ContextProvider} from './src/services/context/CustomContext';
+import Loader from './src/services/context/Loader';
 
 export const getTheme = (isDarkMode: boolean) => ({
   ...DefaultTheme,
@@ -37,7 +39,10 @@ function App(): React.JSX.Element {
         <PersistGate loading={null} persistor={persistor}>
           <PaperProvider theme={getTheme(isDarkMode)}>
             <NotifierWrapper>
-              <RootStackNavigator />
+              <ContextProvider>
+                <Loader />
+                <RootStackNavigator />
+              </ContextProvider>
             </NotifierWrapper>
           </PaperProvider>
         </PersistGate>

@@ -16,10 +16,10 @@ export async function clearCachedData() {
   removeToken();
 }
 
-export const internetReachable = async () => {
-  const timeout = (milliseconds: number) =>
-    new Promise(resolve => setTimeout(resolve, milliseconds));
+export const timeout = (milliseconds: number) =>
+  new Promise(resolve => setTimeout(resolve, milliseconds));
 
+export const internetReachable = async () => {
   //let isInternetReachable: boolean | null = false;
   let isConnected: boolean | null = false;
 

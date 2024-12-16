@@ -1,14 +1,16 @@
-import { api } from "..";
-import { logError } from "../../../utils/logger";
-import Request from "../apiRequester";
-import { IRecipeData } from "../entities/IRecipe";
+import {api} from '..';
+import {logError} from '../../../utils/logger';
+import {hideLoader, showLoader} from '../../context/CustomContext';
+import Request from '../apiRequester';
+import {IRecipeData} from '../entities/IRecipe';
 
 export const callIdentifyFoodAndGenerateRecipe = async (
-  fromData: FormData
+  fromData: FormData,
 ): Promise<any> => {
   try {
-    Request.Instance.setLoader(false);
+    showLoader();
     const output = await api.identifyFoodAndGenerateRecipe(fromData);
+    hideLoader();
     return output;
   } catch (error: any) {
     logError(error);
@@ -18,7 +20,6 @@ export const callIdentifyFoodAndGenerateRecipe = async (
 
 export const callGetRecipes = async (): Promise<IRecipeData[]> => {
   try {
-    Request.Instance.setLoader(false);
     const output = await api.callGetRecipes();
     return output.data;
   } catch (error: any) {
@@ -28,11 +29,11 @@ export const callGetRecipes = async (): Promise<IRecipeData[]> => {
 };
 
 export const callGetRecipeDetails = async (
-  id: string
+  id: string,
 ): Promise<IRecipeData> => {
   try {
-    Request.Instance.setLoader(false);
     const output = await api.callGetRecipeDetails(id);
+
     return output.data;
   } catch (error: any) {
     logError(error);

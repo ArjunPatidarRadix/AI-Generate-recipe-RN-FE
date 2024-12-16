@@ -30,9 +30,7 @@ const RecipeDetailsScreen = ({navigation, route}: IProps) => {
   useEffect(() => {
     async function getRecipeDetails() {
       if (recipeId) {
-        Request.Instance.setLoader(true);
         const result = await ApiCall.callGetRecipeDetails(recipeId);
-        Request.Instance.setLoader(false);
         if (!(result instanceof AppApiException)) {
           setRecipeData(result);
         }
@@ -45,18 +43,18 @@ const RecipeDetailsScreen = ({navigation, route}: IProps) => {
     <ScreenContainer>
       <ScrollView>
         <>
-          <AsyncImage
-            targetURL={`${IMAGE_BASE_URL}${recipeData?.imagePath}`}
-            resizeMode="cover"
-            style={{
-              width: '100%',
-              height: moderateScale(180),
-              borderRadius: moderateScale(10),
-              marginBottom: moderateScale(10),
-            }}
-          />
           {recipeData ? (
             <View style={{marginTop: marginSizes.md}}>
+              <AsyncImage
+                targetURL={`${IMAGE_BASE_URL}${recipeData?.imagePath}`}
+                resizeMode="cover"
+                style={{
+                  width: '100%',
+                  height: moderateScale(180),
+                  borderRadius: moderateScale(10),
+                  marginBottom: marginSizes.md,
+                }}
+              />
               <Text type="largeBold">Identified Food</Text>
               <Text type="small">{recipeData?.recipeName}</Text>
               <Text

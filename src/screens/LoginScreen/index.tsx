@@ -28,6 +28,7 @@ const LoginScreen = ({navigation}: any) => {
     async function name() {
       try {
         const token = await getToken();
+        Request.Instance.setOrUpdateTokens(token, undefined);
         if (token) {
           navigation.navigate('Dashboard');
         }

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -21,10 +21,8 @@ import {
 } from '../utils/constant/ScreenConstants';
 import {AlertDialog} from '../components/templates/Dialog/AlertDialog';
 import {Loader} from '../components/templates/LoaderView/Loader';
-import {useNetInfo} from '@react-native-community/netinfo';
 import Request from '../services/api/apiRequester';
 import {useDispatch} from 'react-redux';
-import {Keyboard} from 'react-native';
 import RecipeDetailsScreen from '../screens/RecipeDetailsScreen';
 
 export type AppStackParamList = {

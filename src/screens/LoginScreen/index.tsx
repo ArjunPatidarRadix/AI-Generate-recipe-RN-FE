@@ -9,11 +9,7 @@ import {colors} from '../../theme/colors';
 import {TUserLogin} from '../../types/TUser';
 import {ApiCall} from '../../services/api/call';
 import {AppApiException} from '../../services/api/error/AppApiException';
-import {
-  NAVIGATION_TO_ALERT_DIALOG,
-  NAVIGATION_TO_LOADER_VIEW,
-} from '../../utils/constant/ScreenConstants';
-import {english} from '../../utils/strings';
+import {NAVIGATION_TO_ALERT_DIALOG} from '../../utils/constant/ScreenConstants';
 import Request from '../../services/api/apiRequester';
 import {getToken} from '../../utils/shared';
 
@@ -37,7 +33,7 @@ const LoginScreen = ({navigation}: any) => {
       }
     }
     name();
-  }, []);
+  }, [navigation]);
 
   const handleInputChange = (value: string, name: string) => {
     setFormData({...formData, [name]: value});

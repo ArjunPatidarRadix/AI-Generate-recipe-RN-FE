@@ -1,9 +1,5 @@
 import axios, {AxiosRequestHeaders, GenericAbortSignal} from 'axios';
 import {BASE_URL, HOST} from './Constants';
-import {
-  NAVIGATION_TO_ALERT_DIALOG,
-  NAVIGATION_TO_LOADER_VIEW,
-} from '../../utils/constant/ScreenConstants';
 import Logger from '../../utils/logger/apiLogger';
 import {AppApiException} from './error/AppApiException';
 import {LocalStorage} from '../storage';

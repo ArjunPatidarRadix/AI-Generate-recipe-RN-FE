@@ -1,10 +1,9 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {colors} from '../../theme/colors';
-import {marginSizes, sizes} from '../../theme/sizes';
+import {marginSizes} from '../../theme/sizes';
 import {moderateScale} from 'react-native-size-matters';
 
-const {height: ScreenHeight} = Dimensions.get('screen');
-const imageSize = ScreenHeight * 0.15;
+// const {height: ScreenHeight} = Dimensions.get('screen');
 export const styles = StyleSheet.create({
   view: {
     backgroundColor: colors.defaultBackgroundColor,

@@ -2,7 +2,6 @@ import {useFocusEffect} from '@react-navigation/native';
 import React from 'react';
 import {
   BackHandler,
-  ImageBackground,
   StyleSheet,
   TouchableWithoutFeedback,
   View,
@@ -36,7 +35,6 @@ interface IAlertDialog {
       showCancelIcon?: boolean;
       dismissableOnButtonClick?: boolean;
       cancelIconCallback?: () => void;
-      isBackGroundImage?: boolean;
       testID?: string;
     };
   };
@@ -113,7 +111,6 @@ export const AlertDialog: React.FC<IAlertDialog> = ({
        */
 
       cancelIconCallback = () => {},
-      isBackGroundImage = false,
       testID,
     },
   },

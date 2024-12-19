@@ -1,7 +1,6 @@
 import {api} from '..';
 import {logError} from '../../../utils/logger';
 import {hideLoader, showLoader} from '../../context/CustomContext';
-import Request from '../apiRequester';
 import {IRecipeData} from '../entities/IRecipe';
 
 export const callIdentifyFoodAndGenerateRecipe = async (

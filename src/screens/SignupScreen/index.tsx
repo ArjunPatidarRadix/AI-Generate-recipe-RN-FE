@@ -10,7 +10,6 @@ import {AppApiException} from '../../services/api/error/AppApiException';
 import {ApiCall} from '../../services/api/call';
 import {TUserRegistration} from '../../types/TUser';
 import {NAVIGATION_TO_ALERT_DIALOG} from '../../utils/constant/ScreenConstants';
-import Request from '../../services/api/apiRequester';
 
 const SignupScreen = ({navigation}: any) => {
   const [isLoading, setLoading] = useState(false);

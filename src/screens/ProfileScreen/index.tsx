@@ -1,6 +1,5 @@
 import {View} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {ScreenContainer} from '../../components/templates/ScreenContainer';
 import Text from '../../components/Text/Text';
 import {Button} from '../../components/button/Button';
 import {marginSizes, paddingSizes} from '../../theme/sizes';

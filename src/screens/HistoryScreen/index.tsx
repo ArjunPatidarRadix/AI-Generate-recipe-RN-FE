@@ -1,6 +1,5 @@
-import {FlatList, View} from 'react-native';
+import {FlatList} from 'react-native';
 import React, {useEffect} from 'react';
-import {Button} from '../../components/button/Button';
 import {ScreenContainer} from '../../components/templates/ScreenContainer';
 import Text from '../../components/Text/Text';
 import {useDispatch, useSelector} from 'react-redux';
@@ -27,7 +26,7 @@ const HistoryScreen = ({navigation}: any) => {
     if (isFocused) {
       dispatch(getRecipes());
     }
-  }, [isFocused]);
+  }, [isFocused, dispatch]);
 
   const onRecipeClickHandler = (id: string) => {
     navigation.navigate('RecipeDetails', {

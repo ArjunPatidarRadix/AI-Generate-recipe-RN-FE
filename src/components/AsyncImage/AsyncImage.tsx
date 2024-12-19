@@ -20,7 +20,6 @@ interface IAsyncImage extends Omit<FastImageProps, 'source'> {
   style: ImageStyle;
   showLoadingAnimation?: boolean;
   loadingStyle?: {};
-  showImageSkeleton?: boolean;
 }
 interface IServePlaceHolderImageComponentType {
   style: ViewStyle;
@@ -42,10 +41,6 @@ interface IBeginLoadingAsyncImageType {
   setIsImageLoading: (value: React.SetStateAction<boolean>) => void;
   isImageLoadComplete: boolean;
   props: {};
-}
-
-interface IServeLoadingImageSkeletonType {
-  style: {};
 }
 
 const getResizeMode = (mode: ImageMode) => {
@@ -175,7 +170,6 @@ const AsyncImage: FC<IAsyncImage> = ({
    */
   showLoadingAnimation = true,
   loadingStyle = {},
-  showImageSkeleton = false,
   ...props
 }) => {
   const [isImageLoadComplete, setIsImageLoadComplete] = useState(false);

@@ -1,4 +1,3 @@
-import React from 'react';
 import NetInfo from '@react-native-community/netinfo';
 import {
   NETWORK_CONNECTED,

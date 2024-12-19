@@ -11,8 +11,6 @@ import {english} from '../../utils/strings';
 import {logError, logMe} from '../../utils/logger';
 import ImagePicker from 'react-native-image-crop-picker';
 import Text from '../../components/Text/Text';
-import {NAVIGATION_TO_ALERT_DIALOG} from '../../utils/constant/ScreenConstants';
-import Avatar from '../../components/Avatar/Avatar';
 import {colors} from '../../theme/colors';
 import {showDialog} from '../../services/context/CustomContext';
 
@@ -30,8 +28,7 @@ type TImage = {
   size: number;
   width: number;
 };
-const RecipeGenerateScreen = ({navigation}: any) => {
-  const [isLoading, setLoading] = useState(false);
+const RecipeGenerateScreen = () => {
   // const [recipeData, setRecipeData] = useState<RecipeData | undefined>({
   //   recipeName: 'Pizza',
   //   recipe:
@@ -138,7 +135,6 @@ const RecipeGenerateScreen = ({navigation}: any) => {
     formData.append('size', image.size.toString());
 
     try {
-      setLoading(true);
       console.log('formData: ', formData);
       const response = await ApiCall.callIdentifyFoodAndGenerateRecipe(
         formData,
@@ -160,7 +156,6 @@ const RecipeGenerateScreen = ({navigation}: any) => {
         buttons: [{text: 'Okay'}],
       });
     } finally {
-      setLoading(false);
     }
   };
 

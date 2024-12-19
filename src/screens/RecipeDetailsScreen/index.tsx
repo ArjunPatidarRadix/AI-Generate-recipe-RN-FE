@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 import {ApiCall} from '../../services/api/call';
 import {IRecipeData} from '../../services/api/entities/IRecipe';
 import {AppApiException} from '../../services/api/error/AppApiException';
-import Request from '../../services/api/apiRequester';
 import Text from '../../components/Text/Text';
 import {ScreenContainer} from '../../components/templates/ScreenContainer';
 import AsyncImage from '../../components/AsyncImage/AsyncImage';
@@ -19,7 +18,7 @@ interface IProps {
   route: {params: IRecipeDetailsProps};
 }
 
-const RecipeDetailsScreen = ({navigation, route}: IProps) => {
+const RecipeDetailsScreen = ({route}: IProps) => {
   const {recipeId} = route.params;
 
   console.log('recipeId:: ' + recipeId);
@@ -37,7 +36,7 @@ const RecipeDetailsScreen = ({navigation, route}: IProps) => {
       }
     }
     getRecipeDetails();
-  }, []);
+  }, [recipeId]);
 
   return (
     <ScreenContainer>

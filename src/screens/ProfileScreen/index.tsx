@@ -1,5 +1,5 @@
 import {View} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Text from '../../components/Text/Text';
 import {Button} from '../../components/button/Button';
 import {marginSizes, paddingSizes} from '../../theme/sizes';
@@ -10,6 +10,7 @@ import Request from '../../services/api/apiRequester';
 import {ApiCall} from '../../services/api/call';
 import {AppApiException} from '../../services/api/error/AppApiException';
 import {IUserResponse} from '../../services/api/entities/IAuthentication';
+import {useFocusEffect} from '@react-navigation/native';
 
 const ProfileScreen = ({navigation}: any) => {
   const onLogoutPress = () => {
@@ -21,17 +22,24 @@ const ProfileScreen = ({navigation}: any) => {
     undefined,
   );
 
-  useEffect(() => {
-    async function getProfile() {
-      Request.Instance.setLoader(true);
-      const result = await ApiCall.callGetProfile();
-      Request.Instance.setLoader(false);
-      if (!(result instanceof AppApiException)) {
-        setUserData(result);
+  useFocusEffect(
+    React.useCallback(() => {
+      // Do something when the screen is focused
+      async function getProfile() {
+        Request.Instance.setLoader(true);
+        const result = await ApiCall.callGetProfile();
+        Request.Instance.setLoader(false);
+        if (!(result instanceof AppApiException)) {
+          setUserData(result);
+        }
       }
-    }
-    getProfile();
-  }, []);
+      getProfile();
+      return () => {
+        // Do something when the screen is unfocused
+        // Useful for cleanup functions
+      };
+    }, []),
+  );
 
   return (
     <View

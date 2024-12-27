@@ -3,7 +3,7 @@ import React, {Suspense, useEffect} from 'react';
 import {ScreenContainer} from '../../components/templates/ScreenContainer';
 import Text from '../../components/Text/Text';
 import {useDispatch, useSelector} from 'react-redux';
-import {IStore} from '../../services/redux';
+import {AppDispatch, IStore} from '../../services/redux';
 import {ThunkDispatch} from '@reduxjs/toolkit';
 import {getRecipes} from '../../services/redux/slices/recipesSection/helper';
 import {useFocusEffect, useIsFocused} from '@react-navigation/native';
@@ -18,7 +18,7 @@ import PressableText from '../../components/Text/PressableText';
 
 const HistoryScreen = ({navigation}: any) => {
   const {recipesData} = useSelector((state: IStore) => state.recipesData);
-  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+  const dispatch = useDispatch<AppDispatch>();
 
   useFocusEffect(
     React.useCallback(() => {
